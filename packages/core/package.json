@@ -1,0 +1,12 @@
+{
+  "name": "@coopmatch/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Board-agnostic matching layer: resume -> profile, posting -> requirements, two-stage ranking. Must not import from any adapter.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts",
+    "./rank": "./src/rank/index.ts"
+  }
+}

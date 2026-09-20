@@ -1,0 +1,24 @@
+{
+  "name": "coopmatch",
+  "private": true,
+  "type": "module",
+  "description": "Board-agnostic job matching layer. Ranks university job postings against a resume with explained reasoning.",
+  "workspaces": [
+    "packages/core",
+    "packages/adapters/*",
+    "eval"
+  ],
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --test 'packages/**/test/*.test.ts' 'eval/test/*.test.ts'",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test",
+    "eval": "node eval/src/run.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "typescript": "5.8"
+  }
+}

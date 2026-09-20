@@ -1,0 +1,7 @@
+{
+  "name": "@coopmatch/eval",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline ranking-quality harness. Gates every change to @coopmatch/core."
+}

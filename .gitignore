@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+*.log
+
+# Never commit real board data, resumes, or captured payloads.
+# Only scrubbed fixtures under fixtures/ are allowed, and they are
+# added explicitly with `git add -f`.
+fixtures/**/*.raw.json
+captures/
+resumes/
+*.pdf
+.cache/
