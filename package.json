@@ -1,5 +1,7 @@
 {
   "name": "coopmatch",
+  "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "description": "Board-agnostic job matching layer. Ranks university job postings against a resume with explained reasoning.",

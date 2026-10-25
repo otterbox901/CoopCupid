@@ -1,10 +1,18 @@
-# CoopCupid
+<p align="center"><img src="docs/logo.svg" alt="CoopCupid logo: a bold LOO pierced by a cupid's arrow" width="240"></p>
+
+<h1 align="center">CoopCupid</h1>
+
+<p align="center">
+  <img alt="Version 0.1.0" src="https://img.shields.io/badge/version-0.1.0-e8264f">
+  <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-141014">
+  <img alt="Chrome 155+" src="https://img.shields.io/badge/chrome-155%2B-f6b3ee">
+</p>
 
 A Chrome extension that matches a résumé to the student's current WaterlooWorks
 search, scores opportunities locally, and applies to eligible jobs saved in a
 WaterlooWorks folder named **coopcupid**. No AI backend, API keys, or CoopCupid account.
 
-![CoopCupid side panel open beside a WaterlooWorks job search, showing ranked matches with interview and fit scores](docs/extension-in-waterlooworks.png)
+<p align="center"><img src="docs/panel.png" alt="CoopCupid side panel: pink gradient, bold black headline, résumé upload card, and a black Search matching jobs button" width="360"></p>
 
 ## Install for development
 
@@ -101,3 +109,8 @@ WaterlooWorks session accepts the full flow. Live verification with a student
 account is still needed before distribution. Tests submit no real applications.
 
 Existing `coopmatch` WaterlooWorks folders and local résumé data remain available after the CoopCupid rename. New folders use `coopcupid`.
+
+## License
+
+[MIT](LICENSE) © 2026 Alexander Pershukevich. Bundled fonts (Montserrat, Rubik
+Bubbles) are under the SIL Open Font License; see `surfaces/extension/fonts/`.
