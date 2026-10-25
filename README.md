@@ -4,9 +4,7 @@ A Chrome extension that matches a résumé to the student's current WaterlooWork
 search, scores opportunities locally, and applies to eligible jobs saved in a
 WaterlooWorks folder named **coopcupid**. No AI backend, API keys, or CoopCupid account.
 
-<p align="center">
-  <img src="surfaces/site/assets/extension-preview.png" alt="CoopCupid side panel showing ranked job matches with interview and fit scores" width="360">
-</p>
+![CoopCupid side panel open beside a WaterlooWorks job search, showing ranked matches with interview and fit scores](docs/extension-in-waterlooworks.png)
 
 ## Install for development
 
