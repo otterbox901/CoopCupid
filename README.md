@@ -12,6 +12,8 @@ A Chrome extension that matches a résumé to the student's current WaterlooWork
 search, scores opportunities locally, and applies to eligible jobs saved in a
 WaterlooWorks folder named **coopcupid**. No AI backend, API keys, or CoopCupid account.
 
+![CoopCupid side panel open beside a WaterlooWorks job search, showing ranked matches with interview and fit scores](docs/extension-in-waterlooworks.png)
+
 <p align="center"><img src="docs/panel.png" alt="CoopCupid side panel: pink gradient, bold black headline, résumé upload card, and a black Search matching jobs button" width="360"></p>
 
 ## Install for development
@@ -109,6 +111,11 @@ WaterlooWorks session accepts the full flow. Live verification with a student
 account is still needed before distribution. Tests submit no real applications.
 
 Existing `coopmatch` WaterlooWorks folders and local résumé data remain available after the CoopCupid rename. New folders use `coopcupid`.
+
+## Privacy
+
+CoopCupid stores your résumé and results only in your browser and sends data
+only to WaterlooWorks. See the [privacy policy](PRIVACY.md).
 
 ## License
 

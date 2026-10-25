@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 const source = fileURLToPath(new URL('.', import.meta.url));
 const out = `${source}dist`;
 await mkdir(`${out}/assets`, { recursive: true });
-for (const name of ['index.html', 'styles.css', 'site.js', 'release-links.js']) await copyFile(`${source}${name}`, `${out}/${name}`);
+for (const name of ['index.html', 'privacy.html', 'styles.css', 'site.js', 'release-links.js']) await copyFile(`${source}${name}`, `${out}/${name}`);
 await cp(`${source}assets`, `${out}/assets`, { recursive: true });
 // In the app repository, use the extension's shared assets. Hosted source snapshots
 // also include these files under assets so they remain independently buildable.
