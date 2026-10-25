@@ -1,0 +1,10 @@
+import { build } from 'esbuild';
+import { mkdir, copyFile, cp } from 'node:fs/promises';
+const outdir = 'dist/extension';
+await mkdir(outdir, { recursive: true });
+await build({ entryPoints: ['surfaces/extension/panel.js', 'surfaces/extension/background.js'], outdir, bundle: true, format: 'esm', platform: 'browser', target: 'chrome120', sourcemap: false });
+for (const file of ['manifest.json', 'panel.html', 'panel.css']) await copyFile(`surfaces/extension/${file}`, `${outdir}/${file}`);
+await cp('surfaces/extension/icons', `${outdir}/icons`, { recursive: true });
+await cp('surfaces/extension/fonts', `${outdir}/fonts`, { recursive: true });
+await copyFile('node_modules/pdfjs-dist/build/pdf.worker.mjs', `${outdir}/pdf.worker.mjs`);
+console.log(`Chrome extension built: ${outdir}`);

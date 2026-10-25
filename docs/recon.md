@@ -1,6 +1,26 @@
 # Phase 0 — Recon
 
-**Status: NOT STARTED.** Requires a live authenticated WaterlooWorks session.
+**Status: Static page recon completed; live session verification outstanding.**
+
+October 24, 2026: inspected user-supplied search, posting-details, and application
+wizard HTML (ignored by Git). Confirmed rendered table columns `Openings` and
+`ApplicationCount` (Apps), named filters, pagination, folder methods, posting
+detail/overview methods, custom package wizard, existing grade report/work
+history selections, résumé upload widget, and submission handler. Other
+competition fields below remain unverified. No live network payload or real
+submission was exercised.
+
+The implementation reads session actions from the live page's functions;
+capture values are never embedded. See `surfaces/extension/board.js` and
+`surfaces/extension/application-page.js`. The original checklist below remains
+useful for live validation and future API adapter work.
+
+Folder-save fix: the public `OrbisApp.js` (0.46) configures
+`$.ajaxSetup({traditional: true})`. Array parameters must use repeated bare keys
+(`postingIds=123`), not bracketed keys (`postingIds[]=123`). The extension's
+URL-encoded requests now match this configuration. Regression tests model a
+server that ignores bracketed IDs while returning an empty success response;
+membership verification remains mandatory.
 
 The purpose of this phase is to replace guesses with facts before any product
 code is written. Everything in `packages/core/src/schema.ts` tagged `@expected`
@@ -22,8 +42,8 @@ Resolve this first, before anything else:
 
 | Field | Present? | Where (JSON path) | Notes |
 |---|---|---|---|
-| `applicantCount` | ? | | The single most valuable field |
-| `openings` | ? | | Needed for applicants-per-opening |
+| `applicantCount` | Yes (rendered) | `ApplicationCount` / Apps column | Live JSON path unverified |
+| `openings` | Yes (rendered) | `Openings` column | Live JSON path unverified |
 | `pastHiresByProgram` | ? | | May live on the employer view, not the posting |
 | `repeatEmployer` | ? | | Derivable from hiring history if not explicit |
 | `employerRating` | ? | | |

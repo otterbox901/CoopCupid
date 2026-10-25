@@ -12,3 +12,8 @@ captures/
 resumes/
 *.pdf
 .cache/
+
+# User-provided authenticated page captures (may include session actions and PII).
+/works*.html
+/app_page.html
+/infocardbeforeapp_page.html

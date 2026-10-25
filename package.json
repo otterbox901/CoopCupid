@@ -9,16 +9,25 @@
     "eval"
   ],
   "engines": {
-    "node": ">=22.6"
+    "node": ">=24"
   },
   "scripts": {
-    "test": "node --test 'packages/**/test/*.test.ts' 'eval/test/*.test.ts'",
+    "test": "node --test 'packages/**/test/*.test.ts' 'eval/test/*.test.ts' 'surfaces/extension/test/*.test.js'",
+    "build": "node scripts/build-extension.mjs",
+    "test:browser": "npm run build && node scripts/smoke-extension.mjs",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm test",
-    "eval": "node eval/src/run.ts"
+    "eval": "node eval/src/run.ts",
+    "build:site": "node scripts/build-site.mjs",
+    "preview:site": "npm run build:site && python3 -m http.server 4173 --bind 127.0.0.1 --directory surfaces/site/dist"
   },
   "devDependencies": {
     "@types/node": "^26.6.2",
+    "esbuild": "^0.28.2",
+    "linkedom": "^0.18.14",
     "typescript": "5.8"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^6.4.299"
   }
 }

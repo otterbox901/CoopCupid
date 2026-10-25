@@ -6,8 +6,8 @@
  * That boundary is what makes a second school adapter — and the later B2B API —
  * additive rather than a rewrite.
  *
- * FIELD CONFIDENCE: Phase 0 recon has not run yet, so availability of the
- * differentiating fields is unverified. Each field below is tagged:
+ * FIELD CONFIDENCE: Static page recon confirmed some fields; live API payload
+ * recon remains outstanding. Each field below is tagged:
  *   @confirmed — seen in a real captured payload
  *   @expected  — near-certain to exist, not yet observed
  *   @hoped     — the moat depends on this; verify FIRST in recon
@@ -40,9 +40,9 @@ export type Term = {
  * is the single most important recon finding.
  */
 export type CompetitionSignal = {
-  /** Applications submitted so far. @hoped */
+  /** Applications submitted so far. @confirmed in rendered listing columns */
   applicantCount?: number;
-  /** Positions available. @expected */
+  /** Positions available. @confirmed in rendered listing columns */
   openings?: number;
   /** How many students this employer hired previously, keyed by program name. @hoped */
   pastHiresByProgram?: Record<string, number>;

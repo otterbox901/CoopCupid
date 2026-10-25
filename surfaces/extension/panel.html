@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>CoopCupid · Less search. More fit.</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="mark" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 128 80" fill="none"><g stroke="currentColor" stroke-width="5"><path d="M14 12h10v54m-12 0h24"/><ellipse cx="57" cy="46" rx="18" ry="22"/><ellipse cx="104" cy="46" rx="18" ry="22"/></g><g stroke="#d6335f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m27 63 51-40M28 62l-12-1m13 0-2 12"/><path d="M78 23c-13 1-17-7-12-12 4-4 9-1 10 3 2-5 8-5 10-1 3 6-2 9-8 10Z" fill="#d6335f"/></g></svg></span><strong>coopcupid<span class="brand-period">.</span></strong></div>
+    <span class="local"><span aria-hidden="true">◈</span> On-device</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="introHeading">
+      <p class="eyebrow">A little cupid for your co-op</p>
+      <h1 id="introHeading">Less scrolling.<br><span class="playful">More sparks.</span></h1>
+      <p class="intro-copy">Meet your next work-term crush. Match your résumé to WaterlooWorks.</p>
+    </section>
+
+    <section class="card resume-card" aria-labelledby="resumeHeading">
+      <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="resumeHeading">Start with you</h2><span class="section-note">Your résumé</span></div>
+      <div class="upload-wrap">
+        <label class="upload" for="resumeFile">
+          <span class="upload-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M12 17v-5m-3 3 3-3 3 3"/></svg></span>
+          <span class="upload-copy"><span id="resumeName">Choose a PDF résumé</span><span id="resumeHelp" class="upload-hint">PDF · Select to upload</span></span>
+          <span class="upload-arrow" aria-hidden="true">↗</span>
+        </label>
+        <input id="resumeFile" type="file" accept="application/pdf,.pdf" class="file-input" aria-describedby="resumeHelp resumePrivacy">
+      </div>
+      <p id="resumePrivacy" class="hint">Matched on your device. Shared with WaterlooWorks only when you apply.</p>
+      <details class="resume-details"><summary>Review extracted text</summary><label for="resumeText">Text used for matching</label><textarea id="resumeText" rows="7" placeholder="Your extracted résumé text will appear here."></textarea><button id="saveText" class="secondary">Save text corrections</button></details>
+      <div class="experience-field"><label for="priorTerms">Completed co-op terms<span class="hint">Optional · Refines your level of fit</span></label><input id="priorTerms" type="number" min="0" max="20" placeholder="e.g. 2" inputmode="numeric"></div>
+    </section>
+
+    <section class="card search-card" aria-labelledby="searchHeading">
+      <div class="section-heading"><span class="section-number" aria-hidden="true">02</span><h2 id="searchHeading">Meet your matches</h2></div>
+      <div class="filter-heading"><span class="field-caption">WaterlooWorks filters</span><button id="refresh" class="text-button">Refresh filters <span aria-hidden="true">↻</span></button></div>
+      <p id="filters" class="filters">Open WaterlooWorks to read your filters.</p>
+      <button id="search" class="primary">Search matching jobs <span aria-hidden="true">↗</span></button>
+      <p class="hint search-hint">Every page. Your current filters. Ranked for you.</p>
+    </section>
+
+    <div class="status-wrap"><span class="status-symbol" aria-hidden="true">↳</span><p id="status" role="status" aria-live="polite">Ready when you are.</p><button id="stop" class="secondary" hidden>Stop</button></div>
+    <progress id="progress" hidden aria-label="Operation progress"></progress>
+    <nav class="tabs" aria-label="Job lists"><button id="resultsTab" aria-pressed="true" aria-controls="results">Matches <span id="resultCount">0</span></button><button id="folderTab" aria-pressed="false" aria-controls="results">coopcupid <span id="folderCount">0</span></button></nav>
+    <p class="score-note">Fit &amp; interview scores are relative scores out of 100, not interview probabilities.</p>
+
+    <section id="bulkArea" class="card" hidden aria-labelledby="bulkHeading">
+      <p class="eyebrow">Build your shortlist</p>
+      <h2 id="bulkHeading">Keep the promising ones.</h2>
+      <div class="experience-field"><label for="bulkThreshold">Interview score above</label><input id="bulkThreshold" type="number" min="0" max="100" step="1" value="70" required inputmode="numeric" aria-describedby="bulkSummary"></div>
+      <p id="bulkSummary" class="hint"></p>
+      <label class="check-label" for="autoSave"><input id="autoSave" type="checkbox"> Automatically save after each completed search</label>
+      <button id="bulkSave" class="secondary wide">Add matching jobs to coopcupid</button>
+      <p class="hint">Already saved jobs are skipped. Stop a batch at any time.</p>
+    </section>
+    <section id="applyArea" class="card" hidden aria-labelledby="applyHeading">
+      <p class="eyebrow">Your next move</p>
+      <h2 id="applyHeading">From shortlist to submitted.</h2><p id="applyResume">Select a résumé above.</p>
+      <p class="hint">Jobs requiring a cover letter, extra answers, or an external application are skipped.</p>
+      <button id="autoApply" class="primary" aria-describedby="applyAvailability">Auto apply <span aria-hidden="true">↗</span></button>
+      <p id="applyAvailability" class="hint">Review your résumé and job count before starting. Applications run one at a time, with progress and a Stop button.</p>
+      <button id="reviewBatch" class="text-button">Review folder requirements <span aria-hidden="true">↗</span></button>
+    </section>
+    <section id="results" aria-label="Jobs"><div class="empty"><span class="empty-art" aria-hidden="true">♡</span><p class="eyebrow">Your next move</p><h2>Good things ahead.</h2><p>Choose a résumé, then search to discover the roles that fit.</p></div></section>
+    <section id="runLog" aria-label="Application progress" hidden></section>
+    <footer><div class="footer-note"><span class="footer-mark" aria-hidden="true">◈</span><span>Local by design.<br>No AI service. No account needed.</span></div><button id="clear" class="text-button">Clear local data</button></footer>
+  </main>
+  <dialog id="applyDialog" aria-labelledby="batchHeading" aria-describedby="batchSummary"><p class="eyebrow">One last look</p><h2 id="batchHeading">Ready to make your move?</h2><p id="batchSummary" class="batch-summary"></p><p>CoopCupid will upload this résumé and submit every eligible job in this batch. Existing transcript and work history selections are kept. Jobs requiring extra information are skipped.</p><p class="hint">Stop prevents further submissions. A submission already sent may finish.</p><div class="dialog-actions"><button id="cancelApply" class="secondary" autofocus>Cancel</button><button id="confirmApply" class="primary">Apply to eligible jobs</button></div></dialog>
+  <dialog id="clearDialog" aria-labelledby="clearHeading" aria-describedby="clearDescription"><p class="eyebrow">Local data</p><h2 id="clearHeading">Clear data from this browser?</h2><p id="clearDescription">This removes your saved résumé, matching results, and local preferences. You’ll need to upload your résumé again. Your WaterlooWorks folder and submitted applications will stay there.</p><div class="dialog-actions"><button id="cancelClear" class="secondary" autofocus>Cancel</button><button id="confirmClear" class="danger">Clear local data</button></div></dialog>
+  <script type="module" src="panel.js"></script>
+</body>
+</html>
