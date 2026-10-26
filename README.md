@@ -14,8 +14,6 @@ WaterlooWorks folder named **coopcupid**. No AI backend, API keys, or CoopCupid 
 
 ![CoopCupid side panel open beside a WaterlooWorks job search, showing ranked matches with interview and fit scores](docs/extension-in-waterlooworks.png)
 
-<p align="center"><img src="docs/panel.png" alt="CoopCupid side panel: pink gradient, bold black headline, résumé upload card, and a black Search matching jobs button" width="360"></p>
-
 ## Install for development
 
 Requires Node 24+ and current Chrome (155+).
